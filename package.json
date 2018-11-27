@@ -1,0 +1,21 @@
+{
+  "name": "picklerick",
+  "version": "1.0.0",
+  "description": "Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "./bot/index.js",
+    "test": "test"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "pickle",
+    "rick"
+  ],
+  "author": "Mustafa TOPAL",
+  "license": "MIT",
+  "devDependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
