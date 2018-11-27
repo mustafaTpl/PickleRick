@@ -1,5 +1,9 @@
+const secretToken = require('../secret.json');
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+let discord_token = secretToken['discord-token'];
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -54,13 +58,14 @@ client.on('reconnecting', ( status ) => {
     .catch(console.error);
 })
 
-client.on('disconnect', () => {
-  console.log('içerdeyim')
-  if (client.user.status === 'ofline') 
-    console.log('duck u');
+client.on('guild', () => {
+  this.client.emit(Constants.Events.DISCONNECT, event);
+      this.debug(Constants.WSCodes[event.code]);
+      this.destroy();
+      return;
 })
 
-client.login('NDc3NDIzNzg3NzQ3NDQyNjg5.Dt6QxA.mqqBwtmj_gtO2V4cP1B2Jhs-N-4');
+client.login(discord_token);
 
 //console.log(`Hello from ${channel}`);
 //console.log('Hello from ' + channel);
